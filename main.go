@@ -192,3 +192,7 @@ func MustParseInLocation(loc *time.Location, strs ...string) time.Time {
 func Between(time1, time2 string) bool {
 	return With(time.Now()).Between(time1, time2)
 }
+
+func UnixMilli() int64 {
+	return With(time.Now()).UnixMilli()
+}
