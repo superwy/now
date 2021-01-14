@@ -154,7 +154,7 @@ func (now *Now) Parse(strs ...string) (t time.Time, err error) {
 		parseTime       []int
 		currentLocation = now.Location()
 		onlyTimeInStr   = true
-		currentTime  = formatTimeToList(now.Time)
+		currentTime     = formatTimeToList(now.Time)
 	)
 
 	for _, str := range strs {
@@ -209,4 +209,9 @@ func (now *Now) Between(begin, end string) bool {
 	beginTime := now.MustParse(begin)
 	endTime := now.MustParse(end)
 	return now.After(beginTime) && now.Before(endTime)
+}
+
+//毫秒
+func (now *Now) UnixMilli() int64 {
+	return now.UnixNano() / 1e6
 }
