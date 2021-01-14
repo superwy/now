@@ -1,3 +1,3 @@
-module github.com/jinzhu/now
+module github.com/superwy/now
 
 go 1.12
